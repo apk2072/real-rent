@@ -1,0 +1,17 @@
+property_id,unit_number,tenant_name,lease_start,lease_end,monthly_rent,security_deposit,status
+1001,101,John Smith,2024-01-01,2025-01-01,1500,1500,Occupied
+1001,102,Jane Doe,2024-02-15,2025-02-15,1600,1600,Occupied
+1001,103,Robert Johnson,2024-03-10,2025-03-10,1550,1550,Occupied
+1001,104,,,,1500,0,Vacant
+1002,201,Michael Brown,2023-11-01,2024-11-01,1800,1800,Occupied
+1002,202,Emily Wilson,2024-01-15,2025-01-15,1850,1850,Occupied
+1002,203,David Lee,2024-04-01,2025-04-01,1900,1900,Occupied
+1002,204,Sarah Miller,2023-12-01,2024-12-01,1750,1750,Occupied
+1003,301,Thomas Anderson,2024-02-01,2025-02-01,2100,2100,Occupied
+1003,302,Jennifer Taylor,2024-03-15,2025-03-15,2200,2200,Occupied
+1003,303,,,,2000,0,Vacant
+1003,304,William Davis,2023-10-15,2024-10-15,2150,2150,Occupied
+1004,401,Jessica Martinez,2024-01-20,2025-01-20,2500,2500,Occupied
+1004,402,Christopher Wilson,2023-11-10,2024-11-10,2600,2600,Occupied
+1004,403,Amanda Johnson,2024-04-05,2025-04-05,2550,2550,Occupied
+1004,404,Daniel Thompson,2023-12-15,2024-12-15,2450,2450,Occupied

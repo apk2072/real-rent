@@ -1,0 +1,44 @@
+{
+  "name": "real-rent",
+  "version": "1.0.0",
+  "description": "Real estate rent roll analysis application",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "compile": "tsc",
+    "csv-to-jsonl": "tsc && node dist/scripts/csvToJsonl.js",
+    "db-init": "tsc && node dist/scripts/initDb.js",
+    "start-mcp": "tsc && node dist/scripts/startMcpServer.js",
+    "start-financial-mcp": "tsc && node dist/scripts/startFinancialMcpServer.js"
+  },
+  "keywords": [
+    "real-estate",
+    "rent-roll",
+    "typescript",
+    "react",
+    "mcp"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "github:modelcontextprotocol/typescript-sdk",
+    "axios": "^1.9.0",
+    "cheerio": "^1.1.0",
+    "csv-parser": "^3.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "@types/react": "^18.2.67",
+    "@types/react-dom": "^18.2.22",
+    "@types/sqlite3": "^3.1.11",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.3",
+    "vite": "^4.5.2"
+  }
+}
