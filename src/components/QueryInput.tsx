@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface QueryInputProps {
   onSubmit: (query: string, queryType: 'natural_language' | 'sql') => void;
@@ -14,6 +14,28 @@ const QueryInput: React.FC<QueryInputProps> = ({ onSubmit }) => {
       onSubmit(query, queryType);
     }
   };
+
+  const naturalLanguageQueries = [
+    'Show me all vacant units',
+    'Compare 15-year vs 30-year mortgage rates',
+    'What is the occupancy rate?',
+    'Show me units with rent above 1500',
+    'Which leases are expiring soon?',
+    'What are the current mortgage rates?',
+    'Calculate monthly payment for a $500,000 property',
+    'How have interest rates changed in the last 6 months?',
+    'What is the average 30-year fixed mortgage rate today?',
+    'What would be the total interest paid on a 30-year loan?'
+  ];
+
+  const sqlQueries = [
+    'SELECT * FROM rent_roll WHERE status = "VU"',
+    'SELECT COUNT(*) as total, SUM(CASE WHEN status = "O" THEN 1 ELSE 0 END) as occupied FROM rent_roll',
+    'SELECT * FROM rent_roll WHERE unit = "110"',
+    'SELECT * FROM rent_roll WHERE autobill > 1500'
+  ];
+
+  const currentQueries = queryType === 'natural_language' ? naturalLanguageQueries : sqlQueries;
 
   return (
     <div className="query-input-container">
@@ -55,46 +77,19 @@ const QueryInput: React.FC<QueryInputProps> = ({ onSubmit }) => {
         </div>
 
         <div className="query-examples">
-          <h4>Example queries:</h4>
-          <ul>
-            {queryType === 'natural_language' ? (
-              <>
-                <li onClick={() => setQuery('Show me all vacant units')}>
-                  Show me all vacant units
-                </li>
-                <li onClick={() => setQuery('What is the occupancy rate?')}>
-                  What is the occupancy rate?
-                </li>
-                <li onClick={() => setQuery('Show me units with rent above 1500')}>
-                  Show me units with rent above 1500
-                </li>
-                <li onClick={() => setQuery('Which leases are expiring soon?')}>
-                  Which leases are expiring soon?
-                </li>
-              </>
-            ) : (
-              <>
-                <li onClick={() => setQuery('SELECT * FROM rent_roll WHERE status = "VU"')}>
-                  SELECT * FROM rent_roll WHERE status = "VU"
-                </li>
-                <li
-                  onClick={() =>
-                    setQuery(
-                      'SELECT COUNT(*) as total, SUM(CASE WHEN status = "O" THEN 1 ELSE 0 END) as occupied FROM rent_roll'
-                    )
-                  }
-                >
-                  SELECT COUNT(*) as total, SUM(CASE WHEN status = "O" THEN 1 ELSE 0 END) as occupied FROM rent_roll
-                </li>
-                <li onClick={() => setQuery('SELECT * FROM rent_roll WHERE unit = "110"')}>
-                  SELECT * FROM rent_roll WHERE unit = "110"
-                </li>
-                <li onClick={() => setQuery('SELECT * FROM rent_roll WHERE autobill > 1500')}>
-                  SELECT * FROM rent_roll WHERE autobill {">"} 1500
-                </li>
-              </>
-            )}
-          </ul>
+          <h4>Examples:</h4>
+          <div className="examples-inline">
+            {currentQueries.map((q, index) => (
+              <span 
+                key={`${queryType}-${index}`} 
+                className="example-query" 
+                onClick={() => setQuery(q)}
+              >
+                {q}
+                {index < currentQueries.length - 1 && ' | '}
+              </span>
+            ))}
+          </div>
         </div>
 
         <button type="submit" className="submit-button">

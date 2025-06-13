@@ -73,6 +73,10 @@ main {
 
 .query-examples {
   margin: 1rem 0;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
 }
 
 .query-examples h4 {
@@ -80,23 +84,20 @@ main {
   color: var(--primary-color);
 }
 
-.query-examples ul {
-  list-style: none;
-}
-
-.query-examples li {
-  display: inline-block;
-  margin-right: 1rem;
-  margin-bottom: 0.5rem;
-  padding: 0.25rem 0.5rem;
-  background-color: #e9ecef;
-  border-radius: 4px;
-  cursor: pointer;
+.examples-inline {
+  line-height: 1.4;
   font-size: 0.9rem;
 }
 
-.query-examples li:hover {
-  background-color: #dee2e6;
+.example-query {
+  cursor: pointer;
+  color: var(--secondary-color);
+  transition: color 0.2s;
+}
+
+.example-query:hover {
+  color: #2980b9;
+  text-decoration: underline;
 }
 
 .submit-button {

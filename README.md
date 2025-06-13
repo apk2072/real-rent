@@ -119,3 +119,12 @@ npm run dev
 - `SELECT * FROM rent_roll WHERE status = "Vacant"`
 - `SELECT COUNT(*) as total, SUM(CASE WHEN status = "Occupied" THEN 1 ELSE 0 END) as occupied FROM rent_roll`
 - `SELECT * FROM rent_roll WHERE property_id = 1001`
+
+### Financial Analysis (MCP Service)
+
+- "What are the current mortgage rates?"
+- "How have interest rates changed in the last 6 months?"
+- "What is the average 30-year fixed mortgage rate today?"
+- "Calculate the monthly mortgage payment for a $500,000 property"
+- "What would be the total interest paid on a 30-year loan?"
+- "Compare mortgage rates for different loan terms (15-year vs 30-year)"
